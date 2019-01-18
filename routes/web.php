@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','StartController@start');
+Route::get('/blogs', 'BlogsController@index');
+Route::get('/blogs/create', 'BlogsController@create');
+Route::post('/blogs', 'BlogsController@store');
+Route::get('/blogs/{blog}', 'BlogsController@show');
+Route::post('blogs/{blog}/comments', 'BlogsCommentsController@store');
