@@ -13,17 +13,17 @@ class BlogsCommentsController extends Controller
     public function store(Blog $blog)
     {
         
-        Comment::create([
+        $validated=request()->validate([
 
-            'blog_id' => $blog->id,
+            'name'=>['required'],
 
-            'name' => request('name'),
+            'emailid'=>['required'],
 
-            'emailid' => request('emailid'),
-            
-            'Comment' => request('comment')
+            'comment'=>['required']
 
         ]);
+
+        Comment::create($validated+['blog_id'=>$blog->id]);
 
         return back();
     }

@@ -4,7 +4,7 @@
 <br>
 <br>
 
-
+@include('errors')
 
   <form method="POST" action="/blogs">
     @csrf
