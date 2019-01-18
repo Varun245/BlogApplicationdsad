@@ -7,9 +7,6 @@ use Illuminate\Http\Request;
 use App\Comment;
 use App\Blog;
 
-
-
-
 class BlogsController extends Controller
 {
     public function index()
@@ -43,7 +40,7 @@ class BlogsController extends Controller
     public function show(Blog $blog)
     {
 
-        $commentsForPaginate = \App\Blog::find($blog->id)->comments()->orderBy('created_at', 'DESC')->paginate(2);
+        $commentsForPaginate = Blog::find($blog->id)->comments()->orderBy('created_at', 'DESC')->paginate(2);
 
         return view('blogs.show', compact('blog', 'commentsForPaginate'));
 

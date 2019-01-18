@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Blog;
 use App\Comment;
 
-
 class BlogsCommentsController extends Controller
 {
     public function store(Blog $blog)

@@ -6,6 +6,24 @@
  
 @include('errors')
 
+<div class="container-fluid">
+
+  <div class="card">
+
+    <h5 class="card-header">{{$blog->title}}</h5>
+
+    <div class="card-body">
+
+      <div class="form-group">
+        <textarea class="form-control" rows="10" name="comment" disabled>{{$blog->description}}</textarea>
+      </div>
+     
+    </div>
+
+  </div>
+
+  <br>
+
   <div class="card">
 
     <h5 class="card-header">Leave a Comment</h5>
